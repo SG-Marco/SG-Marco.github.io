@@ -124,6 +124,7 @@ We’re using the g object to store the profile owner and g is available in the 
 This means that for a barebones case all we have to do in the view is render the template.   
 The information we need will be available in the template.   
 ```python
+{% raw %}
 {# facebook/templates/profile/photos.html #}
 
 {% extends "profile/layout.html" %}
@@ -131,5 +132,6 @@ The information we need will be available in the template.
 {% for photo in g.profile_owner.photos.all() %}
     <img src="{{ photo.source_url }}" alt="{{ photo.alt_text }}" />
 {% endfor %}
+{% endraw %}
 ```
 
